@@ -11,7 +11,6 @@ month_avg = data.groupby(['Month']).mean()
 
 chart_def = """
  {
-
     chart: {
         type: 'streamgraph',
         marginBottom: 30,
