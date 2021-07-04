@@ -64,7 +64,7 @@ chart_def = """
                 y: 30,
                 yAxis: 0
             },
-            text: 'Cancelled<br>during<br>World War II'
+            
         }, {
             point: {
                 x: 18,
@@ -72,7 +72,7 @@ chart_def = """
                 y: 90,
                 yAxis: 0
             },
-            text: 'Soviet Union fell,<br>Germany united'
+            
         }],
         labelOptions: {
             backgroundColor: 'rgba(255,255,255,0.5)',
@@ -329,9 +329,8 @@ def app():
     wp= jp.QuasarPage()
     h1 = jp.QDiv(a=wp, text = "Analysis of Course Data", classes ="text-h3 text-center q-pa-md")
     p1 = jp.QDiv(a=wp, text="These Graphs represent the analysis")
-    hc = jp.HighCharts(a=wp, options= chart_def)
-    hc.options.title.text = "Average Rating by the Month"
-    
+
+    hc = jp.HighCharts(a=wp, options= chart_def)    
     hc.options.xAxis.categories = list(month_avg.index)
 
     hc_data = [{"name":v1, "data":[v2 for v2 in month_avg[v1]]} for v1 in month_avg.columns]
